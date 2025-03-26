@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Transaction Loan Report</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+        }
+        .report-header {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+        .user-info {
+            margin-bottom: 20px;
+        }
+        .user-info table {
+            width: 100%;
+            border-collapse: collapse;
+        }
+        .user-info table th,
+        .user-info table td {
+            border: 1px solid #dddddd;
+            text-align: left;
+            padding: 8px;
+        }
+        .user-info table th {
+            background-color: #f2f2f2;
+        }
+    </style>
+</head>
+<body>
+    <div class="report-header">
+        <h1>Transaction Loan Report</h1>
+    </div>
+    
+    <div class="user-info">
+        <h2>Username - {{ loan.0.customer }}</h2>
+        <table>
+            <tr>
+                <th>Payment Amount</th>
+                <td>{{ transactions.0.payment }} Tk</td>
+            </tr>
+            <tr>
+                <th>Transaction ID</th>
+                <td>{{ transactions.0.transaction }}</td>
+            </tr>
+            <tr>
+                <th>Date</th>
+                <td>{{ transactions.0.payment_date }}</td>
+            </tr>
+            <tr>
+                <th>Customer Email</th>
+                <td>{{ transactions.0.customer.user.email }}</td>
+            </tr>
+        </table>
+    </div>
+</body>
+</html>
